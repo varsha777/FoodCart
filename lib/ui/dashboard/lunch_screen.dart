@@ -58,6 +58,7 @@ class _LunchState extends State<Lunch> with AutomaticKeepAliveClientMixin<Lunch>
     Firestore.instance
         .collection("MenuItems")
         .where("type", isEqualTo: "2")
+        .where("status", isEqualTo: 1)
         .getDocuments()
         .then((QuerySnapshot snapshot) {
       if (snapshot.documents.length > 0) {

@@ -32,16 +32,16 @@ class _OrderPlacedSuccessState extends State<OrderPlacedSuccess>
     _sendEmail();
   }
 
-  String username = 'varshavikshith@gmail.com';
-  String password = 'vikshith@547';
+  String username = 'Sathyalakshmiaryavysyafoodcorn@gmail.com';
+  String password = '123456789@Rajesh';
 
   void _sendEmail() async {
     final smtpServer = gmail(username, password);
     final message = Message()
-      ..from = Address(username, 'Dhoni')
-      ..recipients.add('varsha.makam@gmail.com')
+      ..from = Address(username, 'Food Cart')
+      ..recipients.add('Sathyalakshmiaryavysyafoodcorn@gmail.com')
 //      ..ccRecipients.addAll(['destCc1@example.com', 'destCc2@example.com'])
-//      ..bccRecipients.add(Address('bccAddress@example.com'))
+      ..bccRecipients.add(Address('reddyrajeshkesarla04@gmail.com'))
       ..subject = 'New Delivery'
       ..text = 'Hi you got a new delivery request \n Order No:-${widget.orderNo}'
       ..html = "<h1>Hi you got a new delivery request</h1>\n<h2>Order No:-${widget.orderNo}</h2>";

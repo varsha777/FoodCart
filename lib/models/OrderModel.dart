@@ -7,6 +7,7 @@ class OrderModel {
   int totalQty;
   String orderId;
   String Phone;
+  String Email;
   List<OrderItemsListListBean> orderItemsList;
 
   OrderModel(
@@ -18,6 +19,7 @@ class OrderModel {
       this.totalQty,
       this.orderId,
       this.Phone,
+      this.Email,
       this.orderItemsList});
 
   OrderModel.fromJson(Map<String, dynamic> json) {
@@ -29,6 +31,7 @@ class OrderModel {
     this.totalQty = json['totalQty'];
     this.orderId = json['orderId'].toString();
     this.Phone = json['Phone'];
+    this.Email = json['Email'];
     this.orderItemsList = (json['orderItemsList'] as List) != null
         ? (json['orderItemsList'] as List).map((i) => OrderItemsListListBean.fromJson(i)).toList()
         : null;
@@ -44,6 +47,7 @@ class OrderModel {
     data['totalQty'] = this.totalQty;
     data['orderId'] = this.orderId;
     data['Phone'] = this.Phone;
+    data['Email'] = this.Email;
     data['orderItemsList'] =
         this.orderItemsList != null ? this.orderItemsList.map((i) => i.toJson()).toList() : null;
     return data;

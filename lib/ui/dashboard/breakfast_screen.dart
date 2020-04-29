@@ -60,6 +60,7 @@ class _BreakFastState extends State<BreakFast> with AutomaticKeepAliveClientMixi
     Firestore.instance
         .collection("MenuItems")
         .where("type", isEqualTo: "1")
+        .where("status", isEqualTo: 1)
         .getDocuments()
         .then((QuerySnapshot snapshot) {
       if (snapshot.documents.length > 0) {
@@ -104,7 +105,7 @@ class _BreakFastState extends State<BreakFast> with AutomaticKeepAliveClientMixi
                       } else {
                         _menuItemList[index].itemCount--;
                       }
-                      _doDbOperations(_menuItemList[index],index, value);
+                      _doDbOperations(_menuItemList[index], index, value);
 
                       setState(() {});
                       return value;
@@ -113,7 +114,7 @@ class _BreakFastState extends State<BreakFast> with AutomaticKeepAliveClientMixi
     );
   }
 
-  void _doDbOperations(MenuItemModel item,int index, bool value) async {
+  void _doDbOperations(MenuItemModel item, int index, bool value) async {
     List<Map<String, dynamic>> _selectedFav = new List();
     List<dynamic> _tempList = await DB.checkItem(item);
     if (_tempList.length <= 0) {

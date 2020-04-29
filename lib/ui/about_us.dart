@@ -81,7 +81,7 @@ class _AboutUsState extends State<AboutUs> {
                       style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
                     ),
                     subtitle: Text(
-                      "+91 9100458104",
+                      "+91 9100458104, +91 8142491534",
                       style: TextStyle(color: Colors.black, fontWeight: FontWeight.normal),
                     ),
                   ),
@@ -98,7 +98,7 @@ class _AboutUsState extends State<AboutUs> {
                     title: Text("Email",
                         style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
                     subtitle: Text(
-                      "rajesh.kesarla@gmail.com",
+                      "Sathyalakshmiaryavysyafoodcorn@gmail.com,\nreddyrajeshkesarla04@gmail.com",
                       style: TextStyle(color: Colors.black, fontWeight: FontWeight.normal),
                     ),
                   ),

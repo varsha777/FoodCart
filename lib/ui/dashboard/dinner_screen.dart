@@ -70,6 +70,7 @@ class _DinnerState extends State<Dinner> with AutomaticKeepAliveClientMixin<Dinn
     Firestore.instance
         .collection("MenuItems")
         .where("type", isEqualTo: "4")
+        .where("status", isEqualTo: 1)
         .getDocuments()
         .then((QuerySnapshot snapshot) {
       if (snapshot.documents.length > 0) {

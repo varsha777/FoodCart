@@ -30,6 +30,7 @@ class _SnacksState extends State<Snacks> {
     Firestore.instance
         .collection("MenuItems")
         .where("type", isEqualTo: "3")
+        .where("status", isEqualTo: 1)
         .getDocuments()
         .then((QuerySnapshot snapshot) {
       if (snapshot.documents.length > 0) {
